@@ -10,7 +10,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         boolean success = false;
-        int remainingAttempts = 2;
+        int remainingAttempts = 5;
         int payment = -1;
 
         while (remainingAttempts > 0) {
@@ -87,17 +87,17 @@ public class Main {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         boolean success = false;
 
-        System.out.println("Please add employee. First name: ");
+        System.out.println("Please add new employee. First name: ");
         String firstName = reader.readLine();
 
-        System.out.println("Please add employee. Last name: ");
+        System.out.println("Please add new employee. Last name: ");
         String lastName = reader.readLine();
 
         int payment = -1;
 
         while (!success) {
             try {
-                System.out.println("Please add employee. Payment: ");
+                System.out.println("Please new add employee. Payment: ");
                 payment = Integer.parseInt(reader.readLine());
             } catch (NumberFormatException | IOException e) {
                 System.out.println("You entered string, please enter integer value");
