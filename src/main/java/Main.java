@@ -12,23 +12,11 @@ public class Main {
         boolean success = false;
         int remainingAttempts = 5;
         int payment = -1;
+        String firstName = null;
+        String lastName = null;
 
         while (remainingAttempts > 0) {
-            System.out.println("Please add " + remainingAttempts + " employee. First name: ");
-            String firstName = reader.readLine();
-
-            System.out.println("Please add " + remainingAttempts + " employee. Last name: ");
-            String lastName = reader.readLine();
-
-            while (!success) {
-                try {
-                    System.out.println("Please add " + remainingAttempts + " employee. Payment: ");
-                    payment = Integer.parseInt(reader.readLine());
-                } catch (NumberFormatException | IOException e) {
-                    System.out.println("You entered string, please enter integer value");
-                }
-                success = payment == -1 ? false : true;
-            }
+            addNewEmployee(remainingAttempts);
 
             employee.add(new Employee(firstName, lastName, payment));
             payment = -1;
@@ -54,7 +42,7 @@ public class Main {
                     break;
                 case 3:
                     System.out.println("Add new employee");
-                    addNewEmployee();
+                    addNewEmployee(1);
                     Menu.displayMenu();
                     break;
                 case 4:
@@ -83,21 +71,21 @@ public class Main {
         }
     }
 
-    public static void addNewEmployee() throws IOException {
+    public static void addNewEmployee(int i) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         boolean success = false;
 
-        System.out.println("Please add new employee. First name: ");
+        System.out.println("Please add first name of a new employee. " + i + " left employees to add." );
         String firstName = reader.readLine();
 
-        System.out.println("Please add new employee. Last name: ");
+        System.out.println("Please add last name of a new employee. " + i + " left employees to add.");
         String lastName = reader.readLine();
 
         int payment = -1;
 
         while (!success) {
             try {
-                System.out.println("Please new add employee. Payment: ");
+                System.out.println("Please add amount of payment of new employee. " + i + " left employees to add.");
                 payment = Integer.parseInt(reader.readLine());
             } catch (NumberFormatException | IOException e) {
                 System.out.println("You entered string, please enter integer value");
