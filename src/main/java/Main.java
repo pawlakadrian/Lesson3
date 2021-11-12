@@ -58,7 +58,7 @@ public class Main {
                     Menu.displayMenu();
                     break;
                 case 4:
-                    System.out.println("I close the program");
+                    System.out.println("Close the program");
                     break;
                 default:
                     System.out.println("Please again chose one option from: 1-4");
