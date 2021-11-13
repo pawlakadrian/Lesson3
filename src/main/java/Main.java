@@ -10,7 +10,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         boolean success = false;
-        int remainingAttempts = 2;
+        int remainingAttempts = 5;
         int payment = -1;
         String firstName = null;
         String lastName = null;
