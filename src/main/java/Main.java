@@ -10,15 +10,14 @@ public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         boolean success = false;
-        int remainingAttempts = 5;
+        int remainingAttempts = 2;
         int payment = -1;
         String firstName = null;
         String lastName = null;
 
         while (remainingAttempts > 0) {
-            addNewEmployee(remainingAttempts);
+            addNewEmployee(remainingAttempts, reader);
 
-            employee.add(new Employee(firstName, lastName, payment));
             payment = -1;
             success = false;
             remainingAttempts--;
@@ -42,7 +41,7 @@ public class Main {
                     break;
                 case 3:
                     System.out.println("Add new employee");
-                    addNewEmployee(1);
+                    addNewEmployee(1, reader);
                     Menu.displayMenu();
                     break;
                 case 4:
@@ -71,8 +70,7 @@ public class Main {
         }
     }
 
-    public static void addNewEmployee(int i) throws IOException {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+    public static void addNewEmployee(int i, BufferedReader reader) throws IOException {
         boolean success = false;
 
         System.out.println("Please add first name of a new employee. " + i + " left employees to add." );
